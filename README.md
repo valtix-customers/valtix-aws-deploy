@@ -18,7 +18,7 @@ The Terraform repository will be supplied as a .zip file that will be provided a
 The set of variables for each Profile is defined in a separate file.  The name of the file will be the AWS Account name with the AWS Region name appended, with a .tfvars extension.  Each Profile is referenced in the shell (.sh) file, which is used to run the Terraform.
 
 # Terraform Execution Requirements
-The Terraform will be run using a shell (.sh) file called `alsac-valtix-130397-deploy.sh`.  This file will reference the one or more Profiles, which will call the Terraform for each Profile named .tfvars file.  Arguments can be applied in the same way arguments are applied when running Terraform without the shell file.
+The Terraform will be run using a shell (.sh) file called `accounts.sh`.  This file will reference the one or more Profiles, which will call the Terraform for each Profile named .tfvars file.  Arguments can be applied in the same way arguments are applied when running Terraform without the shell file.
 
 The Shell file will create a set of Terraform Workspaces (one per Profile), and use each Workspace to perform operations on each AWS Account and Region accordingly.  The Terraform state for each Profile will be stored in the Terraform Workspace.
 

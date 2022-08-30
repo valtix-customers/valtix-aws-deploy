@@ -17,6 +17,9 @@ The Terraform repository will be supplied as a .zip file that will be provided a
 # Terraform Variables Configuration Requirements
 The set of variables for each Profile is defined in a separate file.  The name of the file will be the AWS Account name with the AWS Region name appended, with a .tfvars extension.  Each Profile is referenced in the shell (.sh) file, which is used to run the Terraform.
 
+# Terraform Valtix API Key File
+In order to authenticate with the Valtix Terraform Provider, a Valtix API Key file is used.  This is generated from within Valtix and requires admin_super permissions to create.  The API Key File must be generated with admin_rw permissions and is used to authenticate Terraform calls to the Valtix Terraform Provider.  The JSON file needs to be placed in the top-level folder for this repository.  It is referenced by name by the `valtix_api_key_file` variable in the TFVars file
+
 # Terraform Execution Requirements
 The Terraform will be run using a shell (.sh) file called `accounts.sh`.  This file will reference the one or more Profiles, which will call the Terraform for each Profile named .tfvars file.  Arguments can be applied in the same way arguments are applied when running Terraform without the shell file.
 

@@ -21,10 +21,10 @@ resource "valtix_gateway" "ingress_gateway" {
   min_instances         = var.valtix_ingress_gateway_autoscale_min
   max_instances         = var.valtix_ingress_gateway_autoscale_max
   gateway_state         = var.valtix_ingress_gateway_status
-  # settings {
-  #   name  = "controller.use_internal_lb"
-  #   value = var.valtix_ingress_gateway_internal_lb
-  # }
+  settings {
+    name  = "controller.use_internal_lb"
+    value = var.valtix_ingress_gateway_internal_lb
+  }
 }
 
 # Create a new Valtix Egress/EW Gateway Stack
